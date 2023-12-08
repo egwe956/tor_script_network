@@ -121,105 +121,12 @@ ftp_auditfile_from_remote_server
 
 
 
-#~ function ssh_remote_server_details() {
-	#~ echo "Type in remote server password"
-	#~ read remote_server_pw
-	
-    #~ sshpass -p "$remote_server_pw" ssh -T -o  StrictHostKeyChecking=no tc@"$IP_for_remote_server" << EOF
-        #~ how_long_up="This is the uptime value: \$(uptime -p)"
-        #~ ip_add="This is the remote server's IP address: \$(ifconfig | grep -i broadcast | grep inet | awk '{print \$2}')"
-        #~ ip_info="This is the remote server's country: \$(whois $IP_for_remote_server | grep -i country)"
-        
-       
-    
-        #~ echo \$how_long_up >> audit.txt
-        #~ echo \$ip_add >> audit.txt
-        #~ echo \$ip_info >> audit.txt
-    
-       
-#~ EOF
-#~ }
-
-#~ ssh_remote_server_details
 
 
 
 
 
 
-
-#~ use another bash script to maintain persistence and perform commands on remote server
-#~ function ssh_remote_server_details(){
-	
-	#~ ssh -T tc@$IP_for_remote_server 'bash -s' < run.sh $domain_name $IP_for_remote_server
-	
-	#~ }
-#~ ssh_remote_server_details
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#~ function ssh_remote_server_details() {
-	#~ echo "Type in remote server password"
-	#~ read remote_server_pw
-	
-    #~ sshpass -p "$remote_server_pw" ssh -T -o  StrictHostKeyChecking=no tc@"$IP_for_remote_server" << EOF
-        #~ how_long_up="This is the uptime value: \$(uptime -p)"
-        #~ ip_add="This is the remote server's IP address: \$(ifconfig | grep -i broadcast | grep inet | awk '{print \$2}')"
-        #~ ip_info="This is the remote server's country: \$(whois $IP_for_remote_server | grep -i country)"
-        
-       
-    
-        #~ echo \$how_long_up >> audit.txt
-        #~ echo \$ip_add >> audit.txt
-        #~ echo \$ip_info >> audit.txt
-    
-       
-#~ EOF
-#~ }
-
-#~ ssh_remote_server_details
-
-
-
-
-
-
-#~ function ssh_whois() {
-	
-	
-    #~ sshpass -p "$remote_server_pw" ssh -T -o  StrictHostKeyChecking=no tc@"$IP_for_remote_server" << EOF
-    #~ echo "Type in the domain which you like to perform Whois on:"
-	#~ read domain_name 
-        
-    #~ target_domain="The following is the whois data for $domain_name: "
-    
- 
-    
-    #~ sleep 1
-    #~ echo $target_domain >> audit.txt
-#~ EOF
-#~ }
-
-#~ ssh_whois
-
-#~ # use ftp protocol to get audit.txt file from remote server
 
 
 
